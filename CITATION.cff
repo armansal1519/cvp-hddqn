@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "Please cite this software version when using the implementation."
+type: software
+title: "CVP-HDDQN: Research software for hierarchical reinforcement learning in gold futures"
+authors:
+  - family-names: Salehi
+    given-names: Arman
+version: 1.0.0
+date-released: '2026-10-04'
+doi: 10.5281/zenodo.23142380
+url: https://github.com/armansal1519/cvp-hddqn
+repository-code: https://github.com/armansal1519/cvp-hddqn
+license: PolyForm-Noncommercial-1.0.0
+keywords:
+  - hierarchical reinforcement learning
+  - gold futures
+  - market microstructure
+  - research software

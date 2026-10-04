@@ -1,0 +1,27 @@
+{
+  "title": "CVP-HDDQN: Research software for hierarchical reinforcement learning in gold futures",
+  "upload_type": "software",
+  "creators": [
+    {
+      "name": "Salehi, Arman"
+    }
+  ],
+  "version": "1.0.0",
+  "publication_date": "2026-10-04",
+  "license": "PolyForm-Noncommercial-1.0.0",
+  "access_right": "open",
+  "description": "Source-only research software for hierarchical reinforcement learning in gold futures. Includes the original installable neural, feature, learner and execution-ledger core, selected historical Python implementation/test sources, synthetic interface checks and software documentation. No financial outcomes, result tables, generated figures, raw market records, trained weights or original Git history are distributed. Historical training/replay entry points require external data and bound research contracts that are not supplied. Code: PolyForm Noncommercial 1.0.0. Project documentation: CC BY-NC 4.0. Commercial use is not licensed.",
+  "keywords": [
+    "hierarchical reinforcement learning",
+    "gold futures",
+    "market microstructure",
+    "research software"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/armansal1519/cvp-hddqn",
+      "relation": "isVersionOf",
+      "scheme": "url"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cvp-hddqn"
+version = "1.0.0"
+description = "Research software for hierarchical reinforcement learning in gold futures"
+readme = "README.md"
+requires-python = ">=3.11,<3.13"
+license = "PolyForm-Noncommercial-1.0.0"
+license-files = ["LICENSE"]
+authors = [{name = "Arman Salehi"}]
+dependencies = ["numpy>=2,<3", "torch>=2.5,<3", "PyYAML>=6,<7"]
+
+[project.optional-dependencies]
+check = ["pytest>=8,<10"]
+
+[project.urls]
+Repository = "https://github.com/armansal1519/cvp-hddqn"
+Archive = "https://doi.org/10.5281/zenodo.23142380"
+Issues = "https://github.com/armansal1519/cvp-hddqn/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}

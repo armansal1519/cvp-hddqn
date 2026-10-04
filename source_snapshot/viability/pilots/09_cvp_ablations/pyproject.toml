@@ -1,0 +1,32 @@
+[project]
+name = "kx-cvp-ablations"
+version = "0.1.0"
+description = "Hash-bound ablation extension for the frozen CVP-HDDQN V6 experiment"
+readme = "README.md"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+  "kx-simple-hmadrl",
+  "numpy>=2,<3",
+  "pyarrow>=17,<24",
+]
+
+[tool.uv.sources]
+kx-simple-hmadrl = { workspace = true }
+
+[project.optional-dependencies]
+neural = ["torch>=2.5,<3"]
+test = ["pytest>=8,<10", "torch>=2.5,<3"]
+
+[project.scripts]
+kx-cvp-ablations = "kx_cvp_ablations.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/kx_cvp_ablations"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

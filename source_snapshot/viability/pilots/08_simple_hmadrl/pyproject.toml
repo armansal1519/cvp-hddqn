@@ -1,0 +1,50 @@
+[project]
+name = "kx-simple-hmadrl"
+version = "0.1.0"
+description = "FRED regime to GC trade target to L2 execution HMADRL pilot"
+readme = "README.md"
+requires-python = ">=3.11,<3.13"
+dependencies = ["kx-base-gc", "kx-mbo-core", "duckdb>=1.2,<2", "httpx[http2]>=0.28,<1", "numpy>=2,<3", "pandas>=2.2,<3", "pyarrow>=17,<24", "pyyaml>=6,<7"]
+
+[tool.uv.sources]
+kx-base-gc = { workspace = true }
+kx-mbo-core = { workspace = true }
+
+[project.optional-dependencies]
+neural = ["torch>=2.5,<3"]
+test = ["pytest>=8,<10", "torch>=2.5,<3"]
+
+[project.scripts]
+kx-simple-download-xau = "kx_simple_hmadrl.downloader:main"
+kx-simple-import-xau-mirror = "kx_simple_hmadrl.mirror:main"
+kx-simple-build-fred-pretrain = "kx_simple_hmadrl.pretrain_data:main"
+kx-simple-build-gc-data = "kx_simple_hmadrl.gc_data:main"
+kx-simple-train = "kx_simple_hmadrl.runner:main"
+kx-simple-replay = "kx_simple_hmadrl.replay_cli:main"
+kx-simple-gate = "kx_simple_hmadrl.gate:main"
+kx-simple-register = "kx_simple_hmadrl.registry:main"
+kx-simple-basepaper-pretrain = "kx_simple_hmadrl.basepaper_pretrain:main"
+kx-simple-merge-gc = "kx_simple_hmadrl.gc_merge:main"
+kx-simple-validate = "kx_simple_hmadrl.validation:main"
+kx-simple-freeze-target-tape = "kx_simple_hmadrl.target_tape:main"
+kx-simple-build-volume-v3 = "kx_simple_hmadrl.volume_v3_data:main"
+kx-simple-volume-v3 = "kx_simple_hmadrl.volume_v3_cli:main"
+kx-simple-volume-v3-parallel = "kx_simple_hmadrl.volume_v3_parallel:main"
+kx-simple-build-volume-v4 = "kx_simple_hmadrl.volume_v4_data:main"
+kx-simple-volume-v4 = "kx_simple_hmadrl.volume_v4_cli:main"
+kx-simple-volume-v4-parallel = "kx_simple_hmadrl.volume_v4_parallel:main"
+kx-simple-basepaper-v4 = "kx_simple_hmadrl.basepaper_v4:main"
+kx-simple-basepaper-v5 = "kx_simple_hmadrl.basepaper_v5:main"
+kx-simple-volume-v5 = "kx_simple_hmadrl.volume_v5_cli:main"
+kx-simple-volume-v5-parallel = "kx_simple_hmadrl.volume_v5_parallel:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/kx_simple_hmadrl"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
